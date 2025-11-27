@@ -21,3 +21,16 @@ function calculate() {
         document.getElementById('result').value = 'Error';
     }
 }
+
+window.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key >= '0' && key <= '9') {
+        insert(key);
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        insert(key);
+    } else if (key === 'Enter') {
+        calculate();
+    } else if (key === 'Backspace') {
+        deleteLast();
+    }
+});
