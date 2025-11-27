@@ -15,6 +15,7 @@ function calculate() {
     let result = document.getElementById('result').value;
     try {
         let answer = eval(result);
+        addToHistory(result + ' = ' + answer);
         document.getElementById('result').value = answer;
     } catch (error) {
         document.getElementById('result').value = 'Error';
